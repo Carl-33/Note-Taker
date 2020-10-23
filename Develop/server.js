@@ -8,6 +8,10 @@ console.log("hi")
 
 app.use(express.static('public'));
 
+app.get("/", function(req, res) {
+  res.json(path.join(__dirname, "public/index.html"));
+});
+
 
 
 const apiRoutes = require('./routing/api-routes.js')(app);
