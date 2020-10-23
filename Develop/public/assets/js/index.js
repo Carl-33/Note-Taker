@@ -4,6 +4,11 @@ const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
 
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
