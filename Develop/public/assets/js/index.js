@@ -5,6 +5,7 @@ const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
 
 
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
