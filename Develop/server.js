@@ -8,14 +8,25 @@ console.log("hi")
 
 app.use(express.static('public'));
 
-app.get("/", function(req, res) {
-  res.json(path.join(__dirname, "public/index.html"));
+
+
+
+// app.get("/", function(req, res) {
+//   res.sendFile(path.join(__dirname, "public/index.html"));
+// });
+
+// app.get("/notes", function(req, res) {
+//   res.sendFile(path.join(__dirname, "public/notes.html"));
+// });
+app.get("/api/notes", function(req, res) {
+  res.sendFile(path.join(__dirname, "db/db.json"));
 });
 
 
+require('./routing/api-routes.js')(app);
+require('./routing/html-routes.js')(app);
 
-const apiRoutes = require('./routing/api-routes.js')(app);
-const htmlRoutes = require('./routing/html-routes.js')(app);
+
 
 
 app.listen(PORT, function (){

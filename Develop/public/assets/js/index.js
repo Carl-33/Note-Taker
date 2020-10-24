@@ -5,10 +5,8 @@ const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
 
 
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
+// app.use(urlencoded({ extended: true }));
+// app.use(json());
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
@@ -32,8 +30,9 @@ const saveNote = (note) => {
 
 // A function for deleting a note from the db
 const deleteNote = (id) => {
+  console.log(id)
   return $.ajax({
-    url: "api/notes/" + id,
+    url: "/api/notes/",
     method: "DELETE",
   });
 };
@@ -88,6 +87,7 @@ const handleNoteDelete = function (event) {
 // Sets the activeNote and displays it
 const handleNoteView = function () {
   activeNote = $(this).data();
+  console.log(activeNote)
   renderActiveNote();
 };
 
@@ -116,7 +116,7 @@ const renderNoteList = (notes) => {
   // Returns jquery object for li with given text and delete button
   // unless withDeleteButton argument is provided as false
   const create$li = (text, withDeleteButton = true) => {
-    const $li = $("<li class='list-group-item'>");
+    const $li = $(`<li class='list-group-item'>`);
     const $span = $("<span>").text(text);
     $li.append($span);
 
@@ -128,16 +128,20 @@ const renderNoteList = (notes) => {
     }
     return $li;
   };
-
   if (notes.length === 0) {
     noteListItems.push(create$li("No saved Notes", false));
   }
 
-  notes.forEach((note) => {
-    const $li = create$li(note.title).data(note);
-    noteListItems.push($li);
-  });
 
+  notes.forEach((note, index) => {
+    note.id = index + 1;
+    const $li = create$li(note.title).data(note);
+
+    noteListItems.push($li);
+    console.log(note)
+    console.log(note.id)
+  });
+console.log(notes[0].id)
   $noteList.append(noteListItems);
 };
 

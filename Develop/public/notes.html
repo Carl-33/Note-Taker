@@ -52,24 +52,25 @@
           console.log("_________________");
           console.log("URL: " + currentURL + "/api/notes");
           console.log("_________________");
-          console.log(noteData);
+          console.log(noteArray);
           console.log("_________________");
-          for (let i = 0; i < noteData.length; i++) {
-            console.log(noteData[i]);
+        //   for (let i = 0; i < noteArray.length; i++) {
+        //     console.log(noteArray[i]);
 
             
-            const notePost = $("<li>");
-            notePost.addClass('note-title, card, list-group-item');
-            notePost.attr('id', 'note-'+ i+1)
-            $('.list-group').append(notePost);
+        //     const notePost = $("<li>");
+        //     notePost.addClass('note-title, card, list-group-item');
+        //     notePost.attr('id', 'note-'+ i+1)
+        //     $('.list-group').append(notePost);
 
-            $('#note-'+i+1).append('<h4>'+ noteData[i].title +'</h4>');
-            console.log(noteData[i].title)
-            $('#note-'+i+1).append('<p>'+ noteData[i].text +'</p>');
-            console.log(noteData[i].text)
-          }
+        //     $('#note-'+i+1).append('<h4>'+ noteArray[i].title +'</h4>');
+        //     console.log(noteArray[i].title)
+        //     $('#note-'+i+1).append('<p>'+ noteArray[i].text +'</p>');
+        //     console.log(noteArray[i].text)
+        //   }
         });
     };
+    
     runNoteQuery();
 
 
