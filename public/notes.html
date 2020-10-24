@@ -40,38 +40,38 @@
   <script type="text/javascript">
 
 
-    function runNoteQuery() {
-      const currentURL = window.location.origin;
+    // function runNoteQuery() {
+    //   const currentURL = window.location.origin;
 
-      $.ajax({
-        url: currentURL + '/api/notes',
-        method: 'GET'
-      })
-        .done(function (noteData) {
+    //   $.ajax({
+    //     url: currentURL + '/api/notes',
+    //     method: 'GET'
+    //   })
+    //     .done(function (noteData) {
 
-          console.log("_________________");
-          console.log("URL: " + currentURL + "/api/notes");
-          console.log("_________________");
-          console.log(noteArray);
-          console.log("_________________");
-        //   for (let i = 0; i < noteArray.length; i++) {
-        //     console.log(noteArray[i]);
+    //       console.log("_________________");
+    //       console.log("URL: " + currentURL + "/api/notes");
+    //       console.log("_________________");
+    //       console.log(noteArray);
+    //       console.log("_________________");
+    //     //   for (let i = 0; i < noteArray.length; i++) {
+    //     //     console.log(noteArray[i]);
 
             
-        //     const notePost = $("<li>");
-        //     notePost.addClass('note-title, card, list-group-item');
-        //     notePost.attr('id', 'note-'+ i+1)
-        //     $('.list-group').append(notePost);
+    //     //     const notePost = $("<li>");
+    //     //     notePost.addClass('note-title, card, list-group-item');
+    //     //     notePost.attr('id', 'note-'+ i+1)
+    //     //     $('.list-group').append(notePost);
 
-        //     $('#note-'+i+1).append('<h4>'+ noteArray[i].title +'</h4>');
-        //     console.log(noteArray[i].title)
-        //     $('#note-'+i+1).append('<p>'+ noteArray[i].text +'</p>');
-        //     console.log(noteArray[i].text)
-        //   }
-        });
-    };
+    //     //     $('#note-'+i+1).append('<h4>'+ noteArray[i].title +'</h4>');
+    //     //     console.log(noteArray[i].title)
+    //     //     $('#note-'+i+1).append('<p>'+ noteArray[i].text +'</p>');
+    //     //     console.log(noteArray[i].text)
+    //     //   }
+    //     });
+    // };
     
-    runNoteQuery();
+    // runNoteQuery();
 
 
 

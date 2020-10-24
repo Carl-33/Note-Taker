@@ -21,18 +21,19 @@ const getNotes = () => {
 
 // A function for saving a note to the db
 const saveNote = (note) => {
+  console.log(note);
   return $.ajax({
     url: "/api/notes",
     data: note,
-    method: "POST",
+    method: "POST"
   });
-};
+}
 
 // A function for deleting a note from the db
 const deleteNote = (id) => {
   console.log(id)
   return $.ajax({
-    url: "/api/notes/",
+    url: "/api/notes" + id,
     method: "DELETE",
   });
 };
@@ -141,7 +142,7 @@ const renderNoteList = (notes) => {
     console.log(note)
     console.log(note.id)
   });
-console.log(notes[0].id)
+  console.log(notes[0].id)
   $noteList.append(noteListItems);
 };
 
